@@ -1,217 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlobalZenithToken | Next-Gen Crypto Asset</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        body {
-            background-color: #0b0f19;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow-x: hidden;
-        }
-
-        /* Background Glow Effect */
-        .glow-bg {
-            position: absolute;
-            top: 20%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
-            z-index: -1;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 5%;
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .logo i {
-            color: #6366f1;
-            font-size: 1.8rem;
-        }
-
-        .social-header {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-header a {
-            color: #94a3b8;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px 14px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .social-header a:hover {
-            color: #fff;
-            background: #6366f1;
-            border-color: #6366f1;
-        }
-
-        main {
-            text-align: center;
-            padding: 2rem 5%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: #6366f1;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #94a3b8;
-            margin-bottom: 2.5rem;
-            line-height: 1.6;
-        }
-
-        .token-info-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 3rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .info-item h3 {
-            font-size: 0.9rem;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
-        .info-item p {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 0;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background: #6366f1;
-            color: #fff;
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.3s;
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
-        }
-		.cta-btn:hover {
-            background: #4f46e5;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #64748b;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050b18">
+<meta name="description" content="Zenith — ZENI. A futuristic Web3 ecosystem on BNB Smart Chain.">
+<title>Zenith — ZENI</title>
+<style>
+:root{--bg:#030712;--card:rgba(10,20,38,.72);--line:rgba(79,170,255,.18);--blue:#35a7ff;--cyan:#67d7ff;--text:#eef7ff;--muted:#8da5bd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#0b3155 0,#030712 42%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(80,170,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(80,170,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000,transparent 85%);z-index:-1}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:20;background:rgba(3,7,18,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.05)}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em}.brand img{width:38px;height:38px;object-fit:contain}.links{display:flex;gap:26px;color:#b9cce0;font-size:14px}.links a:hover{color:white}.menu{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{min-height:690px;display:grid;place-items:center;text-align:center;padding:90px 0 80px;position:relative}.orb{position:absolute;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,rgba(30,150,255,.24),rgba(0,0,0,0) 68%);filter:blur(10px);animation:pulse 4s ease-in-out infinite}.hero img{width:150px;height:150px;object-fit:contain;filter:drop-shadow(0 0 30px rgba(53,167,255,.6));position:relative;animation:float 5s ease-in-out infinite}.eyebrow{color:var(--cyan);font-size:13px;letter-spacing:.22em;text-transform:uppercase;margin-top:28px}.hero h1{font-size:clamp(54px,10vw,100px);margin:10px 0 4px;letter-spacing:.05em;line-height:.95;background:linear-gradient(180deg,#fff,#8bd8ff 55%,#3196ef);-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:650px;margin:18px auto 30px;font-size:17px;line-height:1.7}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(103,215,255,.35);border-radius:12px;padding:14px 23px;background:linear-gradient(180deg,rgba(53,167,255,.2),rgba(53,167,255,.06));box-shadow:0 0 28px rgba(53,167,255,.12);font-weight:750}.btn:hover{transform:translateY(-2px);box-shadow:0 0 38px rgba(53,167,255,.24)}.soon{font-size:10px;letter-spacing:.14em;color:#74cfff;margin-left:8px}
+section{padding:90px 0}.section-title{text-align:center;margin-bottom:45px}.section-title h2{font-size:38px;margin:0 0 10px}.section-title p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;backdrop-filter:blur(14px);transition:.3s}.card:hover{transform:translateY(-5px);border-color:rgba(103,215,255,.4);box-shadow:0 18px 55px rgba(0,0,0,.3)}.icon{font-size:27px;margin-bottom:15px}.card h3{margin:0 0 9px}.card p{color:var(--muted);line-height:1.65;margin:0}.token{display:grid;grid-template-columns:1fr 1fr;gap:18px}.row{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.07)}.row:last-child{border:0}.label{color:var(--muted)}.value{font-weight:700;text-align:right;word-break:break-all}.address{font-size:12px}.roadmap{display:grid;gap:14px}.phase{display:flex;gap:18px;align-items:flex-start}.num{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(53,167,255,.12);border:1px solid rgba(53,167,255,.35);color:#8edcff;font-weight:800;flex:none}.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:18px 20px}.faq summary{cursor:pointer;font-weight:700}.faq p{color:var(--muted);line-height:1.65;margin-bottom:0}.contract{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.contract code{background:#020610;border:1px solid var(--line);padding:13px;border-radius:10px;color:#9cddff;word-break:break-all}.social{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.footer{padding:35px 0;border-top:1px solid rgba(255,255,255,.07);color:#70869d;text-align:center;font-size:13px}.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+@keyframes float{50%{transform:translateY(-10px)}}@keyframes pulse{50%{transform:scale(1.08);opacity:.75}}
+@media(max-width:760px){.links{display:none}.menu{display:block}.grid,.token{grid-template-columns:1fr}.hero{min-height:620px;padding-top:65px}.hero img{width:125px;height:125px}.section-title h2{font-size:31px}.nav{height:68px}.links.open{display:flex;position:absolute;top:68px;left:0;right:0;padding:18px 4%;background:rgba(3,7,18,.96);flex-direction:column;gap:17px;border-bottom:1px solid var(--line)}}
+</style>
 </head>
 <body>
+<header class="nav"><div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+<a class="brand" href="#home"><img src="Zenith.png" alt="Zenith logo">ZENITH</a>
+<nav class="links" id="links"><a href="#home">Home</a><a href="#about">About</a><a href="#tokenomics">Tokenomics</a><a href="#roadmap">Roadmap</a><a href="#contract">Contract</a><a href="#faq">FAQ</a><a href="https://x.com/Zenith_xzy" target="_blank" rel="noopener">X</a></nav>
+<button class="menu" id="menu">☰</button></div></header>
 
-    <div class="glow-bg"></div>
+<main id="home">
+<section class="hero"><div class="orb"></div><div class="wrap reveal"><img src="Zenith.png" alt="Zenith">
+<div class="eyebrow">BNB Smart Chain • ZENI</div><h1>ZENITH</h1>
+<p>Building a futuristic Web3 ecosystem powered by ZENI. The next chapter is coming.</p>
+<a class="btn" href="#presale">CONNECT WALLET <span class="soon">COMING SOON</span></a></div></section>
 
-    <header>
-        <div class="logo">
-            <i class="fa-solid fa-gem"></i>
-            <span>GlobalZenith</span>
-        </div>
-        <div class="social-header">
-            <a href="https://x.com/Zenith_xzy" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="t.me/Zenith_xyz_info" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
-        </div>
-    </header>
+<section id="about"><div class="wrap reveal"><div class="section-title"><h2>⚡ About Zenith</h2><p>A clean, fixed-supply foundation for the Zenith ecosystem.</p></div>
+<div class="grid"><div class="card"><div class="icon">◈</div><h3>Built for Web3</h3><p>Zenith is designed as a simple and transparent token ecosystem on BNB Smart Chain.</p></div><div class="card"><div class="icon">◉</div><h3>Fixed Supply</h3><p>ZENI has a total supply of 1 billion tokens with no mint function.</p></div><div class="card"><div class="icon">✦</div><h3>Community First</h3><p>Future ecosystem features will be introduced progressively as Zenith develops.</p></div></div></div></section>
 
-    <main>
-        <div class="hero">
-            <h1>Redefining The Future of <span>Decentralized Finance</span></h1>
-            <p>GlobalZenithToken is engineered for scale, security, and seamless global transactions within the Web3 ecosystem.</p>
-            
-            <div class="token-info-card">
-                <div class="info-item">
-                    <h3>Token Name</h3>
-                    <p>Global Zenith</p>
-                </div>
-                <div class="info-item">
-                    <h3>Ticker / Symbol</h3>
-                    <p>GZT</p>
-                </div>
-                <div class="info-item">
-                    <h3>Network</h3>
-                    <p>Coming Soon</p>
-                </div>
-            </div>
+<section id="tokenomics"><div class="wrap reveal"><div class="section-title"><h2>🪙 Tokenomics</h2><p>Current on-chain token information.</p></div>
+<div class="token"><div class="card"><div class="row"><span class="label">Token Name</span><span class="value">Zenith</span></div><div class="row"><span class="label">Symbol</span><span class="value">ZENI</span></div><div class="row"><span class="label">Total Supply</span><span class="value">1,000,000,000</span></div></div><div class="card"><div class="row"><span class="label">Decimals</span><span class="value">18</span></div><div class="row"><span class="label">Network</span><span class="value">BNB Smart Chain</span></div><div class="row"><span class="label">Tax</span><span class="value">0%</span></div></div></div></div></section>
 
-            <a href="https://t.me/yourusername" target="_blank" class="cta-btn">Join Community</a>
-        </div>
-    </main>
+<section id="presale"><div class="wrap reveal"><div class="section-title"><h2>🚀 Presale</h2><p>Zenith Presale is not live yet.</p></div><div class="card" style="text-align:center;padding:45px"><h3 style="font-size:28px">COMING SOON</h3><p>Presale, wallet connection, pricing, payment and claim features will be announced later.</p><div style="margin-top:25px"><span class="btn">BUY ZENI <span class="soon">COMING SOON</span></span></div></div></div></section>
 
-    <footer>
-        <p>&copy; 2026 GlobalZenithToken. All rights reserved.</p>
-    </footer>
+<section id="roadmap"><div class="wrap reveal"><div class="section-title"><h2>🚀 Roadmap</h2><p>The Zenith journey.</p></div><div class="roadmap">
+<div class="card phase"><div class="num">01</div><div><h3>Foundation</h3><p>Zenith brand, ZENI token and official website.</p></div></div>
+<div class="card phase"><div class="num">02</div><div><h3>Presale</h3><p>ZENI presale launch and community growth — <b>Coming Soon</b>.</p></div></div>
+<div class="card phase"><div class="num">03</div><div><h3>DEX Expansion</h3><p>Liquidity and exchange ecosystem development — <b>Coming Soon</b>.</p></div></div>
+<div class="card phase"><div class="num">04</div><div><h3>Ecosystem</h3><p>Future products, utilities and community initiatives — <b>Coming Soon</b>.</p></div></div>
+</div></div></section>
 
-</body>
-</html>
+<section id="contract"><div class="wrap reveal"><div class="section-title"><h2>📄 Contract Information</h2><p>ZENI is deployed on BNB Smart Chain.</p></div><div class="card contract"><code>0x497A051CaFff277100F225565702a0738d37195A</code><a class="btn" target="_blank" rel="noopener" href="https://bscscan.com/token/0x497A051CaFff277100F225565702a0738d37195A">BscScan ↗</a></div></div></section>
+
+<section id="faq"><div class="wrap reveal"><div class="section-title"><h2>❓ FAQ</h2><p>Quick answers about Zenith.</p></div><div class="faq">
+<details><summary>What is Zenith?</summary><p>Zenith is a Web3 token ecosystem using ZENI on BNB Smart Chain.</p></details>
+<details><summary>What is the total supply?</summary><p>The total supply is 1,000,000,000 ZENI.</p></details>
+<details><summary>Is the presale live?</summary><p>No. Presale and wallet features are currently marked Coming Soon.</p></details>
+<details><summary>Where can I follow Zenith?</summary><p>Follow the official Zenith X account for announcements.</p></details>
+</div></div></section>
+
+<section><div class="wrap reveal"><div class="social"><a class="btn" href="https://x.com/Zenith_xzy" target="_blank" rel="noopener">𝕏 Follow Zenith</a><span class="btn">Telegram <span class="soon">COMING SOON</span></span></div></div></section>
+</main>
+<footer class="footer">© 2026 Zenith • ZENI • BNB Smart Chain<br><span style="display:block;margin-top:8px">This website is informational. Presale features are not currently active.</span></footer>
+<script>
+const menu=document.getElementById('menu'),links=document.getElementById('links');menu.onclick=()=>links.classList.toggle('open');
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
+document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+</script>
+</body></html>
