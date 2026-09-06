@@ -1,65 +1,196 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#050b18">
-<meta name="description" content="Zenith — ZENI. A futuristic Web3 ecosystem on BNB Smart Chain.">
-<title>Zenith — ZENI</title>
-<style>
-:root{--bg:#030712;--card:rgba(10,20,38,.72);--line:rgba(79,170,255,.18);--blue:#35a7ff;--cyan:#67d7ff;--text:#eef7ff;--muted:#8da5bd}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#0b3155 0,#030712 42%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(80,170,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(80,170,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000,transparent 85%);z-index:-1}
-a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:20;background:rgba(3,7,18,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.05)}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em}.brand img{width:38px;height:38px;object-fit:contain}.links{display:flex;gap:26px;color:#b9cce0;font-size:14px}.links a:hover{color:white}.menu{display:none;background:none;border:0;color:white;font-size:25px}
-.hero{min-height:690px;display:grid;place-items:center;text-align:center;padding:90px 0 80px;position:relative}.orb{position:absolute;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,rgba(30,150,255,.24),rgba(0,0,0,0) 68%);filter:blur(10px);animation:pulse 4s ease-in-out infinite}.hero img{width:150px;height:150px;object-fit:contain;filter:drop-shadow(0 0 30px rgba(53,167,255,.6));position:relative;animation:float 5s ease-in-out infinite}.eyebrow{color:var(--cyan);font-size:13px;letter-spacing:.22em;text-transform:uppercase;margin-top:28px}.hero h1{font-size:clamp(54px,10vw,100px);margin:10px 0 4px;letter-spacing:.05em;line-height:.95;background:linear-gradient(180deg,#fff,#8bd8ff 55%,#3196ef);-webkit-background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:650px;margin:18px auto 30px;font-size:17px;line-height:1.7}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(103,215,255,.35);border-radius:12px;padding:14px 23px;background:linear-gradient(180deg,rgba(53,167,255,.2),rgba(53,167,255,.06));box-shadow:0 0 28px rgba(53,167,255,.12);font-weight:750}.btn:hover{transform:translateY(-2px);box-shadow:0 0 38px rgba(53,167,255,.24)}.soon{font-size:10px;letter-spacing:.14em;color:#74cfff;margin-left:8px}
-section{padding:90px 0}.section-title{text-align:center;margin-bottom:45px}.section-title h2{font-size:38px;margin:0 0 10px}.section-title p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;backdrop-filter:blur(14px);transition:.3s}.card:hover{transform:translateY(-5px);border-color:rgba(103,215,255,.4);box-shadow:0 18px 55px rgba(0,0,0,.3)}.icon{font-size:27px;margin-bottom:15px}.card h3{margin:0 0 9px}.card p{color:var(--muted);line-height:1.65;margin:0}.token{display:grid;grid-template-columns:1fr 1fr;gap:18px}.row{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.07)}.row:last-child{border:0}.label{color:var(--muted)}.value{font-weight:700;text-align:right;word-break:break-all}.address{font-size:12px}.roadmap{display:grid;gap:14px}.phase{display:flex;gap:18px;align-items:flex-start}.num{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(53,167,255,.12);border:1px solid rgba(53,167,255,.35);color:#8edcff;font-weight:800;flex:none}.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:18px 20px}.faq summary{cursor:pointer;font-weight:700}.faq p{color:var(--muted);line-height:1.65;margin-bottom:0}.contract{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.contract code{background:#020610;border:1px solid var(--line);padding:13px;border-radius:10px;color:#9cddff;word-break:break-all}.social{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.footer{padding:35px 0;border-top:1px solid rgba(255,255,255,.07);color:#70869d;text-align:center;font-size:13px}.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
-@keyframes float{50%{transform:translateY(-10px)}}@keyframes pulse{50%{transform:scale(1.08);opacity:.75}}
-@media(max-width:760px){.links{display:none}.menu{display:block}.grid,.token{grid-template-columns:1fr}.hero{min-height:620px;padding-top:65px}.hero img{width:125px;height:125px}.section-title h2{font-size:31px}.nav{height:68px}.links.open{display:flex;position:absolute;top:68px;left:0;right:0;padding:18px 4%;background:rgba(3,7,18,.96);flex-direction:column;gap:17px;border-bottom:1px solid var(--line)}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zenith (ZENI) — Community Utility & Engagement Token on BNB Smart Chain.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Zenith (ZENI) — Community Utility & Engagement Token</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="nav"><div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:100%">
-<a class="brand" href="#home"><img src="Zenith.png" alt="Zenith logo">ZENITH</a>
-<nav class="links" id="links"><a href="#home">Home</a><a href="#about">About</a><a href="#tokenomics">Tokenomics</a><a href="#roadmap">Roadmap</a><a href="#contract">Contract</a><a href="#faq">FAQ</a><a href="https://x.com/Zenith_xzy" target="_blank" rel="noopener">X</a></nav>
-<button class="menu" id="menu">☰</button></div></header>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Zenith Home">
+        <img src="logo.png" alt="Zenith logo">
+        <span>ZENITH</span>
+      </a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">Zenith / About</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contract">Contract</a>
+        <a href="#faq">FAQ</a>
+        <a class="x-link" href="https://x.com/Zenith_xzy" target="_blank" rel="noopener">X</a>
+      </nav>
+    </div>
+  </header>
 
-<main id="home">
-<section class="hero"><div class="orb"></div><div class="wrap reveal"><img src="Zenith.png" alt="Zenith">
-<div class="eyebrow">BNB Smart Chain • ZENI</div><h1>ZENITH</h1>
-<p>Building a futuristic Web3 ecosystem powered by ZENI. The next chapter is coming.</p>
-<a class="btn" href="#presale">CONNECT WALLET <span class="soon">COMING SOON</span></a></div></section>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-grid"></div>
+      <div class="container hero-content reveal">
+        <div class="hero-logo"><img src="logo.png" alt="Zenith"></div>
+        <div class="eyebrow">BNB SMART CHAIN • BEP-20</div>
+        <h1>Zenith <span>(ZENI)</span></h1>
+        <p class="tagline">Zenith — Participate. Earn. Build the Future.</p>
+        <p class="hero-copy">A community utility and engagement token designed around participation, campaigns, rewards and future community governance.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#about">Explore Zenith</a>
+          <a class="btn ghost" href="https://x.com/Zenith_xzy" target="_blank" rel="noopener">Follow on X</a>
+        </div>
+        <div class="stats">
+          <div><strong>1B</strong><span>Total Supply</span></div>
+          <div><strong>20%</strong><span>Presale Allocation</span></div>
+          <div><strong>BSC</strong><span>Network</span></div>
+        </div>
+      </div>
+    </section>
 
-<section id="about"><div class="wrap reveal"><div class="section-title"><h2>⚡ About Zenith</h2><p>A clean, fixed-supply foundation for the Zenith ecosystem.</p></div>
-<div class="grid"><div class="card"><div class="icon">◈</div><h3>Built for Web3</h3><p>Zenith is designed as a simple and transparent token ecosystem on BNB Smart Chain.</p></div><div class="card"><div class="icon">◉</div><h3>Fixed Supply</h3><p>ZENI has a total supply of 1 billion tokens with no mint function.</p></div><div class="card"><div class="icon">✦</div><h3>Community First</h3><p>Future ecosystem features will be introduced progressively as Zenith develops.</p></div></div></div></section>
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">01 / ABOUT</span>
+          <h2>Built for community participation.</h2>
+          <p>Zenith (ZENI) is a BEP-20 utility token designed to build a community-driven ecosystem focused on user engagement, participation, rewards and future community governance.</p>
+        </div>
+        <div class="cards three">
+          <article class="card reveal"><div class="icon">◎</div><h3>Participation</h3><p>Community campaigns, activities and ecosystem participation are at the center of Zenith.</p></article>
+          <article class="card reveal"><div class="icon">✦</div><h3>Rewards</h3><p>ZENI may be used for campaign-based rewards, airdrops and future ecosystem incentives.</p></article>
+          <article class="card reveal"><div class="icon">◈</div><h3>Community Voice</h3><p>Holders may participate in selected future proposals and community voting mechanisms.</p></article>
+        </div>
+        <div class="notice reveal"><strong>Utility first.</strong> ZENI is intended primarily as a utility and community participation token, not a promise of profit or guaranteed investment return.</div>
+      </div>
+    </section>
 
-<section id="tokenomics"><div class="wrap reveal"><div class="section-title"><h2>🪙 Tokenomics</h2><p>Current on-chain token information.</p></div>
-<div class="token"><div class="card"><div class="row"><span class="label">Token Name</span><span class="value">Zenith</span></div><div class="row"><span class="label">Symbol</span><span class="value">ZENI</span></div><div class="row"><span class="label">Total Supply</span><span class="value">1,000,000,000</span></div></div><div class="card"><div class="row"><span class="label">Decimals</span><span class="value">18</span></div><div class="row"><span class="label">Network</span><span class="value">BNB Smart Chain</span></div><div class="row"><span class="label">Tax</span><span class="value">0%</span></div></div></div></div></section>
+    <section id="tokenomics" class="section soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">02 / TOKENOMICS</span>
+          <h2>1,000,000,000 ZENI. Fixed supply.</h2>
+          <p>No additional ZENI will be minted after deployment if the deployed contract contains no mint mechanism.</p>
+        </div>
+        <div class="token-layout">
+          <div class="donut" aria-label="Token allocation visual">
+            <div><strong>1B</strong><span>ZENI</span></div>
+          </div>
+          <div class="allocation-list">
+            <div class="alloc"><span>Presale</span><b>200M</b><em>20%</em></div>
+            <div class="alloc"><span>Liquidity</span><b>100M</b><em>10%</em></div>
+            <div class="alloc"><span>Airdrop</span><b>50M</b><em>5%</em></div>
+            <div class="alloc"><span>Development</span><b>50M</b><em>5%</em></div>
+            <div class="alloc"><span>Marketing</span><b>50M</b><em>5%</em></div>
+            <div class="alloc"><span>Community / Ecosystem</span><b>550M</b><em>55%</em></div>
+          </div>
+        </div>
+        <div class="info-grid reveal">
+          <div><span>Token Name</span><strong>Zenith</strong></div>
+          <div><span>Symbol</span><strong>ZENI</strong></div>
+          <div><span>Standard</span><strong>BEP-20</strong></div>
+          <div><span>Network</span><strong>BNB Smart Chain</strong></div>
+          <div><span>Decimals</span><strong>18</strong></div>
+          <div><span>Admin / Owner</span><strong>None</strong></div>
+          <div><span>Mint Function</span><strong>None</strong></div>
+          <div><span>Intended Use</span><strong>Utility & Community</strong></div>
+        </div>
+      </div>
+    </section>
 
-<section id="presale"><div class="wrap reveal"><div class="section-title"><h2>🚀 Presale</h2><p>Zenith Presale is not live yet.</p></div><div class="card" style="text-align:center;padding:45px"><h3 style="font-size:28px">COMING SOON</h3><p>Presale, wallet connection, pricing, payment and claim features will be announced later.</p><div style="margin-top:25px"><span class="btn">BUY ZENI <span class="soon">COMING SOON</span></span></div></div></div></section>
+    <section id="roadmap" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">03 / ROADMAP</span>
+          <h2>From launch to ecosystem.</h2>
+        </div>
+        <div class="timeline">
+          <article class="phase reveal"><div class="phase-no">01</div><div><h3>Token Launch</h3><ul><li>Develop ZENI smart contract</li><li>Deploy on BNB Smart Chain</li><li>Verify contract</li><li>Publish contract address and tokenomics</li><li>Establish official website and social channels</li></ul></div></article>
+          <article class="phase reveal"><div class="phase-no">02</div><div><h3>Presale</h3><ul><li>Launch ZENI presale</li><li>Accept supported BNB/USDT contributions</li><li>Distribute presale allocation according to published rules</li><li>Publish presale results and begin vesting/claim process</li></ul></div></article>
+          <article class="phase reveal"><div class="phase-no">03</div><div><h3>DEX Listing</h3><ul><li>Create initial liquidity</li><li>Launch ZENI trading pair</li><li>Lock liquidity</li><li>Publish liquidity-lock information and official DEX trading information</li></ul></div></article>
+          <article class="phase reveal"><div class="phase-no">04</div><div><h3>Website & Ecosystem Development</h3><ul><li>Develop Zenith ecosystem</li><li>Introduce campaign and participation features</li><li>Introduce ZENI reward mechanisms</li><li>Expand community infrastructure</li></ul></div></article>
+          <article class="phase reveal"><div class="phase-no">05</div><div><h3>Airdrop Campaign</h3><ul><li>Launch community airdrop campaigns</li><li>Reward eligible participants</li><li>Introduce multiple campaign formats</li><li>Develop future governance/community voting mechanisms</li></ul></div></article>
+        </div>
+      </div>
+    </section>
 
-<section id="roadmap"><div class="wrap reveal"><div class="section-title"><h2>🚀 Roadmap</h2><p>The Zenith journey.</p></div><div class="roadmap">
-<div class="card phase"><div class="num">01</div><div><h3>Foundation</h3><p>Zenith brand, ZENI token and official website.</p></div></div>
-<div class="card phase"><div class="num">02</div><div><h3>Presale</h3><p>ZENI presale launch and community growth — <b>Coming Soon</b>.</p></div></div>
-<div class="card phase"><div class="num">03</div><div><h3>DEX Expansion</h3><p>Liquidity and exchange ecosystem development — <b>Coming Soon</b>.</p></div></div>
-<div class="card phase"><div class="num">04</div><div><h3>Ecosystem</h3><p>Future products, utilities and community initiatives — <b>Coming Soon</b>.</p></div></div>
-</div></div></section>
+    <section id="contract" class="section soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">04 / CONTRACT</span>
+          <h2>On-chain transparency.</h2>
+          <p>The official ZENI contract address is published here so the community can independently verify the token on BscScan.</p>
+        </div>
+        <div class="contract-box reveal">
+          <div>
+            <span>ZENI Contract Address</span>
+            <code>0x497A051CaFff277100F225565702a0738d37195A</code>
+          </div>
+          <a class="btn primary" href="https://bscscan.com/token/0x497A051CaFff277100F225565702a0738d37195A" target="_blank" rel="noopener">View on BscScan ↗</a>
+        </div>
+        <div class="security-grid">
+          <article class="card reveal"><h3>No Admin / Owner Control</h3><p>The intended token contract has no active owner/admin control and no mechanism to arbitrarily mint, change balances, change supply or pause transfers.</p></article>
+          <article class="card reveal"><h3>Immutable Logic</h3><p>If the final deployed contract contains no upgrade mechanism, its core token logic cannot be changed after deployment.</p></article>
+          <article class="card reveal"><h3>Verification</h3><p>The contract is intended to be publicly verified on BscScan, subject to successful source-code verification.</p></article>
+        </div>
+      </div>
+    </section>
 
-<section id="contract"><div class="wrap reveal"><div class="section-title"><h2>📄 Contract Information</h2><p>ZENI is deployed on BNB Smart Chain.</p></div><div class="card contract"><code>0x497A051CaFff277100F225565702a0738d37195A</code><a class="btn" target="_blank" rel="noopener" href="https://bscscan.com/token/0x497A051CaFff277100F225565702a0738d37195A">BscScan ↗</a></div></div></section>
+    <section id="whitepaper" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">05 / WHITEPAPER</span>
+          <h2>Zenith documentation.</h2>
+          <p>The core project information, token utility, presale framework, liquidity strategy, vesting, governance, transparency and risk disclosure are summarized below.</p>
+        </div>
 
-<section id="faq"><div class="wrap reveal"><div class="section-title"><h2>❓ FAQ</h2><p>Quick answers about Zenith.</p></div><div class="faq">
-<details><summary>What is Zenith?</summary><p>Zenith is a Web3 token ecosystem using ZENI on BNB Smart Chain.</p></details>
-<details><summary>What is the total supply?</summary><p>The total supply is 1,000,000,000 ZENI.</p></details>
-<details><summary>Is the presale live?</summary><p>No. Presale and wallet features are currently marked Coming Soon.</p></details>
-<details><summary>Where can I follow Zenith?</summary><p>Follow the official Zenith X account for announcements.</p></details>
-</div></div></section>
+        <div class="doc">
+          <details open class="reveal"><summary>1. Introduction</summary><p>Zenith (ZENI) is a BEP-20 utility token designed to build a community-driven ecosystem focused on user engagement, participation, rewards, and future community governance. Zenith aims to give users opportunities to participate in campaigns, complete tasks, earn rewards, and contribute opinions on selected future ecosystem decisions. ZENI is intended primarily as a utility and community participation token, rather than a promise of profit or a guaranteed investment return.</p></details>
+          <details class="reveal"><summary>2. Vision</summary><p>Zenith's vision is to create an active ecosystem where users can participate in campaigns and community activities while having a meaningful role in the future development of the project.</p><ul><li>Community participation</li><li>Campaign-based rewards</li><li>Airdrop programs</li><li>User engagement</li><li>Transparent token distribution</li><li>Community feedback and voting</li></ul></details>
+          <details class="reveal"><summary>3. Token Information</summary><div class="mini-table"><div>Token Name<b>Zenith</b></div><div>Symbol<b>ZENI</b></div><div>Standard<b>BEP-20</b></div><div>Network<b>BNB Smart Chain</b></div><div>Total Supply<b>1,000,000,000 ZENI</b></div><div>Presale Allocation<b>200,000,000 ZENI</b></div><div>Admin/Owner<b>None</b></div><div>Mint Function<b>None</b></div></div></details>
+          <details class="reveal"><summary>4. Presale</summary><p>Zenith plans a presale containing 200,000,000 ZENI (20% of total supply). Participants may contribute supported assets such as BNB or USDT according to the final presale smart-contract rules. The final ZENI price, presale duration, minimum/maximum contribution, hard cap, accepted assets and claim schedule will be publicly announced before the presale begins.</p></details>
+          <details class="reveal"><summary>5. Security & Transparency</summary><p>Zenith intends to prioritize transparency. The project will provide publicly verifiable information wherever possible, including the token contract, tokenomics, allocation information, vesting schedules, liquidity information, official wallet addresses and major ecosystem updates.</p></details>
+          <details class="reveal"><summary>6. Liquidity Strategy</summary><p>Following the presale, Zenith plans to establish liquidity on a suitable decentralized exchange on BNB Smart Chain. An initial target allocation is 100,000,000 ZENI (10% of total supply). The exact amount and pairing, such as ZENI/BNB or ZENI/USDT, will depend on the final launch strategy. The project intends to lock initial liquidity for a publicly announced period using an appropriate liquidity-lock mechanism.</p></details>
+          <details class="reveal"><summary>7. Vesting & Token Unlock</summary><p>To reduce sudden selling pressure, Zenith can use a structured vesting system. A proposed presale structure is 25% available at TGE and 75% released gradually over the following 6 months. Development, marketing and ecosystem allocations may also be released gradually according to predefined schedules. If a team allocation is introduced in the future, a longer vesting period with a cliff may be used.</p></details>
+          <details class="reveal"><summary>8. Utility</summary><p>ZENI is designed to have utility within the future Zenith ecosystem. Potential utility includes campaign rewards for eligible activities, community participation, educational activities, special events and airdrops. The airdrop allocation is 50,000,000 ZENI (5%) and may be distributed through multiple campaigns.</p></details>
+          <details class="reveal"><summary>9. Community Governance</summary><p>ZENI holders may be given the opportunity to participate in community voting on selected future ecosystem decisions. Potential topics include campaign ideas, community initiatives, ecosystem priorities, reward-program proposals and selected development proposals. Holding ZENI does not automatically mean that every project decision is legally or technically controlled by token holders. The project can initially use community proposals and off-chain voting, and potentially introduce a dedicated governance system later.</p></details>
+          <details class="reveal"><summary>10. Community & Ecosystem</summary><p>The long-term goal is to create an ecosystem where community members are active participants. Future initiatives may follow: <strong>Campaign → Participation → Rewards → Community Feedback → Ecosystem Growth</strong>.</p></details>
+          <details class="reveal"><summary>11. Transparency Commitments</summary><ul><li>Token contract and verification</li><li>Total supply and allocations</li><li>Presale rules and vesting schedules</li><li>Liquidity and liquidity-lock information</li><li>Official wallet addresses</li><li>Airdrop criteria</li><li>Major ecosystem updates</li></ul></details>
+          <details class="reveal"><summary>12. Risk Disclosure</summary><p>ZENI is a digital token and its market value may fluctuate significantly. Purchasing ZENI carries risks including market volatility, loss of value, liquidity risk, smart-contract risk, regulatory uncertainty, technical risks and DEX-related risks. Nothing in this document should be interpreted as a guarantee of profit, future token price or investment return. Users should conduct their own research and understand the risks before participating.</p></details>
+          <details class="reveal"><summary>13. Conclusion</summary><p>Zenith (ZENI) aims to build a transparent, community-focused utility ecosystem on BNB Smart Chain with a fixed total supply of 1 billion ZENI, structured community participation, liquidity strategy, vesting mechanisms, rewards, airdrop campaigns and potential future governance.</p></details>
+        </div>
+      </div>
+    </section>
 
-<section><div class="wrap reveal"><div class="social"><a class="btn" href="https://x.com/Zenith_xzy" target="_blank" rel="noopener">𝕏 Follow Zenith</a><span class="btn">Telegram <span class="soon">COMING SOON</span></span></div></div></section>
-</main>
-<footer class="footer">© 2026 Zenith • ZENI • BNB Smart Chain<br><span style="display:block;margin-top:8px">This website is informational. Presale features are not currently active.</span></footer>
-<script>
-const menu=document.getElementById('menu'),links=document.getElementById('links');menu.onclick=()=>links.classList.toggle('open');
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
-document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
-</script>
-</body></html>
+    <section id="faq" class="section soft">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">06 / FAQ</span>
+          <h2>Frequently asked questions.</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal"><summary>What is Zenith (ZENI)?</summary><p>Zenith is a BEP-20 utility and community engagement token on BNB Smart Chain.</p></details>
+          <details class="reveal"><summary>What is the total supply?</summary><p>The fixed total supply is 1,000,000,000 ZENI.</p></details>
+          <details class="reveal"><summary>Can more ZENI be minted?</summary><p>The intended token contract contains no mint function, so no additional ZENI can be minted through that contract.</p></details>
+          <details class="reveal"><summary>Does Zenith have an owner/admin?</summary><p>The intended token contract has no active owner/admin control.</p></details>
+          <details class="reveal"><summary>Which network is ZENI on?</summary><p>ZENI is designed for BNB Smart Chain as a BEP-20 token.</p></details>
+          <details class="reveal"><summary>Where can I verify the contract?</summary><p>Use the BscScan link in the Contract section above.</p></details>
+          <details class="reveal"><summary>When will presale details be announced?</summary><p>The final price, duration, contribution limits, hard cap, accepted assets and claim schedule will be announced before the presale begins.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand"><img src="logo.png" alt="Zenith logo"><span>ZENITH</span></div>
+      <p>Zenith — Participate. Earn. Build the Future.</p>
+      <a href="https://x.com/Zenith_xzy" target="_blank" rel="noopener">X / @Zenith_xzy ↗</a>
+    </div>
+    <div class="container copyright">© 2026 Zenith. Community Utility & Engagement Token.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
